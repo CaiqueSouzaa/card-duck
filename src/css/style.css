@@ -1,0 +1,122 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #023047;
+
+    font-family: 'Roboto', sans-serif;
+}
+
+@keyframes border-card1 {
+    0% {
+        border: 1px solid red; left: 0%; bottom: 0%;
+    }
+    25% {
+        border: 1px solid green; left: 25%; bottom: 25%;
+    }
+    50% {
+        border: 1px solid blue; left: 50%; bottom: 50%;
+    }
+    75% {
+        border: 1px solid purple; left: 75%; bottom: 75%;
+    }
+    100% {
+        border: 1px solid red; left: 100%; bottom: 100%;
+    }
+}
+
+@keyframes border-card2 {
+    0% {
+        border: 2px solid red; left: 0%; bottom: 0%;
+    }
+    25% {
+        border: 2px solid green; left: 50%; bottom: 25%;
+    }
+    50% {
+        border: 2px solid blue; left: 50%; bottom: 50%;
+    }
+    75% {
+        border: 2px solid purple; left: 75%; bottom: 75%;
+    }
+    100% {
+        border: 2px solid red; left: 100%; bottom: 100%;
+    }
+}
+
+.card {
+    /* Configurações gerais */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4px;
+    width: 120px;
+    height: 200px;
+    border-radius: 10px;
+    background-color: #ffffff;
+
+    transform: rotateX(45deg) rotateY(30deg) rotateZ(45deg);
+    animation: border-card1 2s linear infinite;
+
+    /*Configurações secundarias*/
+    transition: width 2s, height 2s, transform 2s, box-shadow 1s, animation 4s;
+}
+
+.card:hover {
+    width: 300px;
+    height: 500px;
+    padding: 6px;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    box-shadow: 5px 10px 30px rgb(4, 4, 4);
+    animation: border-card2 2s linear infinite;
+}
+
+/*Class do 'video'*/
+.video {
+    width: 100%;
+    height: 80%;
+}
+
+.video img {
+    width: 100%;
+    height: 40%;
+    border-radius: 5%;
+}
+
+/*Card Título*/
+.card-title {
+    width: 100%;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    font-size: 9px;
+    transition: font-size 2s, margin-top 2s, margin-bottom 2s;
+}
+
+.card:hover .card-title {
+    font-size: 23px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.card-content {
+    font-size: 5px;
+    transition: font-size 2s, margin-left 2s, margin-right 2s;
+}
+
+.card:hover .card-content {
+    font-size: 13px;
+}
+
+.card-life {
+    display: flex;
+    justify-content: end;
+    padding-right: 10px;
+    margin: 0px 0px 3px 3px;
+    font-size: 11px;
+    transition: margin 2s, font-size 2s;
+}
+
+.card:hover .card-life {
+    margin: 0px 0px 6px 6px;
+    font-size: 22px;
+}
